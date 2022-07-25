@@ -1,0 +1,33 @@
+import  sys
+
+""" Execise 5
+    Driver: Betty  Kouadio
+    Navigator : Mahad Abdi
+    Sign of by : Mason Drenner
+
+ """
+
+
+
+class  Appointment :
+    '''A class that tracks information about appointments and determines if they overlap
+     
+    Attributes:
+        name (str): name of the appointment
+        start (tuple): represents the start time of the appointment
+        end (tuple): represents the end time of the appointment
+    '''    
+    def __init__(self, name, start:tuple, end:tuple):
+        
+        self.name = name
+        self.start = start
+        self.end = end
+        
+        
+    def overlaps(self,other):
+        '''Checks if start and end times of other appointment overlaps
+        
+        Returns:
+            True if the appointments overlap or returns false if they do not
+        '''
+        return (self.start <= other.start < self.end) or (self.start < other.end <= self.end )
